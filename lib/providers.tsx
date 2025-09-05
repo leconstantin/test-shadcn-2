@@ -1,4 +1,6 @@
-import { ThemeProvider } from '@/components/theme-provider';
+import { SiteFooter } from "@/components/layout/site-footer";
+import { SiteHeader } from "@/components/layout/site-header";
+import { ThemeProvider } from "@/components/theme-provider";
 
 export default function Providers({ children }: { children: React.ReactNode }) {
   return (
@@ -8,7 +10,13 @@ export default function Providers({ children }: { children: React.ReactNode }) {
       disableTransitionOnChange
       enableSystem
     >
-      {children}
+      <div className="relative z-10 flex min-h-svh flex-col bg-background">
+        <SiteHeader />
+        <main className="relative flex min-h-svh overflow-hidden flex-1 flex-col">
+          {children}
+        </main>
+        <SiteFooter />
+      </div>
     </ThemeProvider>
   );
 }
