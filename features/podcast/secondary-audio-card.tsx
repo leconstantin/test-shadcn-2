@@ -1,7 +1,7 @@
 import { formatDistanceToNow } from 'date-fns';
 import Image from 'next/image';
 import Link from 'next/link';
-import podCover from '@/public/images/pod-cover.jpg';
+import { audioPlaceHolder } from "@/config/app";
 import type { TMedia } from '@/types';
 export default function SecondaryAudioCard({
   title,
@@ -22,7 +22,7 @@ export default function SecondaryAudioCard({
             alt={title}
             className="object-cover grayscale group-hover:grayscale-75"
             fill
-            src={podCover}
+            src={audioPlaceHolder}
           />
         </div>
 

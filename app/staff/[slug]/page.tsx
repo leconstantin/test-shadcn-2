@@ -17,6 +17,7 @@ import { getMember, getMembers, getRoleName } from '@/data/staff';
 import StaffArticles from '@/features/staff/staff-articles';
 import StaffCard from '@/features/staff/staff-card';
 import { getSocialIcon } from '@/lib/utils';
+import { avatarPlaceHolder, staffPlaceHolder } from '@/config/app';
 
 export async function generateMetadata({
   params,
@@ -55,12 +56,12 @@ export default async function StaffPage({
                 alt="team member"
                 className="h-[12rem] w-full rounded-md object-cover object-center grayscale transition-all duration-500 hover:grayscale-0 group-hover:rounded-xl md:h-[22.5rem]"
                 height="1239"
-                src={member.coverImage || '/images/member-one.webp'}
+                src={member.coverImage || staffPlaceHolder}
                 width="826"
               />
               <div className="-bottom-[40%] -translate-x-1/2 -translate-y-1/2 absolute left-1/2 z-20 rounded-full bg-background p-1.5">
                 <Avatar className="size-16 md:size-20 lg:size-30">
-                  <AvatarImage src={member.avatarUrl || '/profile.svg'} />
+                  <AvatarImage src={member.avatarUrl || avatarPlaceHolder} />
                   <AvatarFallback>{member.username?.charAt(0)}</AvatarFallback>
                 </Avatar>
               </div>

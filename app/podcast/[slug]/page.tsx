@@ -7,13 +7,13 @@ import {
   Disclosure,
   DisclosureContent,
   DisclosureTrigger,
-} from '@/components/ui/disclosure';
+} from '@/components/custom/disclosure';
 import { ScrollArea } from '@/components/ui/scroll-area';
 import { getAudio, getAudios, getAudiosByCategory } from '@/data/audios';
 import CategorySmall from '@/features/_shared/category-sm';
 import SecondaryAudioCard from '@/features/podcast/secondary-audio-card';
-import podCover from '@/public/images/pod-cover.jpg';
 import type { TMedia } from '@/types';
+import { audioPlaceHolder } from '@/config/app';
 export async function generateMetadata({
   params,
 }: {
@@ -115,7 +115,7 @@ function VideoPlayer({ video }: { video: TMedia }) {
         <AudioPlayer
           mimeType="audio/mpeg"
           src={video.url}
-          thumbnail={podCover.src}
+          thumbnail={audioPlaceHolder}
           title={video.title}
         />
       </div>

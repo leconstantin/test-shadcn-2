@@ -7,7 +7,7 @@ import {
   Disclosure,
   DisclosureContent,
   DisclosureTrigger,
-} from '@/components/ui/disclosure';
+} from '@/components/custom/disclosure';
 import { ScrollArea } from '@/components/ui/scroll-area';
 import { getVideo, getVideos, getVideosByCategory } from '@/data/videos';
 import CategorySmall from '@/features/_shared/category-sm';

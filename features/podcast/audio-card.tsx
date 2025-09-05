@@ -1,9 +1,10 @@
-import { formatDistanceToNow } from 'date-fns';
-import Image from 'next/image';
-import Link from 'next/link';
-import { AspectRatio } from '@/components/ui/aspect-ratio';
-import podCover from '@/public/images/pod-cover.jpg';
-import type { TMedia } from '@/types';
+import { formatDistanceToNow } from "date-fns";
+import Image from "next/image";
+import Link from "next/link";
+import { AspectRatio } from "@/components/ui/aspect-ratio";
+import type { TMedia } from "@/types";
+import { audioPlaceHolder } from "@/config/app";
+
 
 export default function AudioCard({ title, slug, createdAt, group }: TMedia) {
   return (
@@ -19,7 +20,7 @@ export default function AudioCard({ title, slug, createdAt, group }: TMedia) {
             className="w-full rounded-sm object-cover grayscale transition-all duration-300 hover:scale-105 group-hover:grayscale-75"
             height={500}
             priority
-            src={podCover}
+            src={audioPlaceHolder}
             width={500}
           />
         </AspectRatio>

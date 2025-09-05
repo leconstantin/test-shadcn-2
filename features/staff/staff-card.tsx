@@ -1,8 +1,9 @@
-import { format } from 'date-fns';
-import Image from 'next/image';
-import Link from 'next/link';
-import { getRoleName } from '@/data/staff';
-import type { TMember } from '@/types';
+import { format } from "date-fns";
+import Image from "next/image";
+import Link from "next/link";
+import { staffPlaceHolder } from "@/config/app";
+import { getRoleName } from "@/data/staff";
+import type { TMember } from "@/types";
 
 export default function StaffCard({
   member,
@@ -21,7 +22,7 @@ export default function StaffCard({
         alt="team member"
         className="h-96 w-full rounded-md object-cover object-top grayscale transition-all duration-500 hover:grayscale-0 group-hover:h-[22.5rem] group-hover:rounded-xl"
         height="1239"
-        src={member.coverImage || '/images/member-one.webp'}
+        src={member.coverImage || staffPlaceHolder}
         width="826"
       />
       <div className="px-2 pt-2 sm:pt-4 sm:pb-0">
@@ -36,7 +37,7 @@ export default function StaffCard({
             {getRoleName(member.role)}
           </span>
           <p className="inline-block translate-y-8 text-muted-foreground text-sm tracking-wide opacity-0 transition-all duration-500 group-hover:translate-y-0 group-hover:text-primary-600 group-hover:opacity-100 dark:group-hover:text-primary-400">
-            Joined {format(new Date(member._creationTime), 'MMMM yyyy')}
+            Joined {format(new Date(member._creationTime), "MMMM yyyy")}
           </p>
         </div>
       </div>
